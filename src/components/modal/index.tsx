@@ -1,13 +1,29 @@
 import React from "react";
 import { keyframes, styled } from "goober";
-import { useModalStore } from "../../store";
+import { ModalStore } from "../../store";
+import { Title } from "../../styles";
 
-const rotate = keyframes`
+const buttonUp = keyframes`
     from {
       opacity: 0;
       transform: translateY(40%);
     }
-    to { opacity: 1 }
+    to { opacity: 1; }
+`;
+
+const fadeIn = keyframes`
+    from { opacity: 0; }
+    to { opacity: 1; }
+`;
+
+const fadeOut = keyframes`
+    from { opacity: 1; }
+    to { opacity: 0; }
+`;
+
+const zoomOut = keyframes`
+    0% { scale(1, 1); }
+    100% { scale(0, 0); }
 `;
 
 const ModalContainer = styled("div")<{ display: boolean }>`
@@ -20,6 +36,7 @@ const ModalContainer = styled("div")<{ display: boolean }>`
   overflow: auto;
   background-color: rgb(0, 0, 0); /* Fallback color */
   background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+  animation: ${fadeIn} 0.2s linear;
 `;
 
 const Content = styled("div")`
@@ -30,7 +47,10 @@ const Content = styled("div")`
   border-radius: 16px;
   width: 30%;
   height: 350px;
-  animation: ${rotate} 0.3s ease-in-out;
+  animation: ${buttonUp} 0.3s ease-in-out;
+  box-shadow: -3px 10px 29px -10px rgba(0, 0, 0, 0.62);
+  -webkit-box-shadow: -3px 10px 29px -10px rgba(0, 0, 0, 0.62);
+  -moz-box-shadow: -3px 10px 29px -10px rgba(0, 0, 0, 0.62);
 `;
 
 const Header = styled("header")`
@@ -43,7 +63,7 @@ const Section = styled("section")``;
 const Close = styled("div")``;
 
 export function Modal() {
-  const { isOpen, triggerModal } = useModalStore((state) => state);
+  const { isOpen, triggerModal } = ModalStore.useStore((state) => state);
 
   return (
     <ModalContainer display={isOpen}>

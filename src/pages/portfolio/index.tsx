@@ -1,10 +1,13 @@
 import React from "react";
+import { useParams } from "react-router-dom";
 import { Modal } from "../../components/modal";
-import { useModalStore, useStore } from "../../store";
+import { ModalStore } from "../../store";
 import { Card, Content, Title } from "../../styles";
 
 export function Portfolio() {
-  const onClickHandler = useModalStore((state) => state.triggerModal);
+  const onClickHandler = ModalStore.useStore((state) => state.triggerModal);
+  const bb = useParams();
+  console.log(bb);
 
   const projects = [
     {
@@ -54,6 +57,10 @@ export function Portfolio() {
     {
       name: "opal",
       description: "Open-Social, never restricted, always governed",
+    },
+    {
+      name: "opad",
+      description: "Open-Ads, never restricted, always governed",
     },
     {
       name: "equip",

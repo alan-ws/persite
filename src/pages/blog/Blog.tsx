@@ -1,21 +1,16 @@
 import React from "react";
-import { useEffect } from "react";
-import { useNavigate } from "react-router-dom";
+import { useParams } from "react-router-dom";
+import { resolveRoute } from "../../lib/utils";
+import { BlogStore } from "../../store";
 
-// get this from store
-const blogs: { [key: string]: boolean } = {
-  "background-fetch-api": true,
+export const blogs: { [key: string]: boolean } = {
+  "download-uninterupted": true,
 };
 
-export function Blog() {
-  let navigate = useNavigate();
-
-  useEffect(() => {
-    const contentToGet = window.location.pathname.split("/");
-
-    if (contentToGet.length < 2) navigate("fgsefes");
-    if (!blogs[contentToGet[2]]) navigate("/blog");
-  }, []);
+function Main() {
+  const blogs = BlogStore.useStore((state) => state.blogs);
 
   return <h1>individual BLOG</h1>;
 }
+
+export const Blog = resolveRoute(Main, BlogStore.useStore);

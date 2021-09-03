@@ -1,0 +1,51 @@
+{
+  "title": "Download uninterupted",
+  "body": {
+    "json": {
+      "nodeType": "document",
+      "data": {},
+      "content": [
+        {
+          "nodeType": "paragraph",
+          "content": [
+            {
+              "nodeType": "text",
+              "value": "Thinking of the background fetch API and the innovations that have occured in the browsers reminds me of Dr. Strangelove.",
+              "marks": [],
+              "data": {}
+            }
+          ],
+          "data": {}
+        },
+        {
+          "nodeType": "paragraph",
+          "content": [
+            {
+              "nodeType": "text",
+              "value": "How I learned to forget about downloads and love the background fetch API. Internet connections were slow, fragile, and poorly accessed. We would've killed for Background Fetch API in 1999.",
+              "marks": [],
+              "data": {}
+            }
+          ],
+          "data": {}
+        },
+        {
+          "nodeType": "paragraph",
+          "content": [
+            {
+              "nodeType": "text",
+              "value": "function me() {}",
+              "marks": [
+                {
+                  "type": "code"
+                }
+              ],
+              "data": {}
+            }
+          ],
+          "data": {}
+        }
+      ]
+    }
+  }
+}
