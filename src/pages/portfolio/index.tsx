@@ -1,6 +1,7 @@
 import React from "react";
 import { useParams } from "react-router-dom";
 import { Modal } from "../../components/modal";
+import { Overlay } from "../../components/overlay";
 import { ModalStore } from "../../store";
 import { Card, Content, Title } from "../../styles";
 
@@ -82,7 +83,7 @@ export function Portfolio() {
           );
         })}
       </Content>
-      <Modal />
+      <Overlay />
     </>
   );
 }

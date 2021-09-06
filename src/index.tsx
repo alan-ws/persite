@@ -4,6 +4,7 @@ import App from "./App";
 import { BrowserRouter as Router } from "react-router-dom";
 import { GraphQLClient, ClientContext } from "graphql-hooks";
 import { setup } from "goober";
+import "./index.css";
 
 setup(React.createElement);
 

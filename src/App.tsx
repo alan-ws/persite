@@ -6,7 +6,7 @@ import { Alogs, alogRoutes } from "./pages/alog";
 import { Portfolio } from "./pages/portfolio";
 import { Contact } from "./pages/contact";
 import { NotFound } from "./pages/notFound";
-import { Home } from "./pages/home";
+import Home from "./pages/home";
 
 function App() {
   let routes = useRoutes([
